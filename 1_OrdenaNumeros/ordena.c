@@ -8,8 +8,6 @@
  * 
  */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "ordena.h"
 
 void OrdenaDigitos(int (*A)[2], int n, int posicao) {

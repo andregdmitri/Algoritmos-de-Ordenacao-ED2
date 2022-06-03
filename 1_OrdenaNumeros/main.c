@@ -10,10 +10,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
 #include "ordena.h"
 
-int main () {
+int main(int argc, char** argv) {
   int n, i = 0;
   
   //****************************************************************************************
@@ -26,7 +25,7 @@ int main () {
   //*****************************************************************************************
 
   OrdenaNumeros(A, n);
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < n; i++) {
     for (int j = 0; j < 2; j++) {
       printf("%d ", A[i][j]);
       }
