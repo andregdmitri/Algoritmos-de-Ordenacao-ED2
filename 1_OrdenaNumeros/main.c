@@ -21,14 +21,14 @@ int main(int argc, char** argv) {
   int A[n][2];
   for (i = 0; i < n; i++) {
     scanf (" %d %d", &A[i][0], &A[i][1]);
-   }
+  }
   //*****************************************************************************************
 
   OrdenaNumeros(A, n);
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < 2; j++) {
       printf("%d ", A[i][j]);
-      }
+    }
     printf("\n");
   }
   return 0;

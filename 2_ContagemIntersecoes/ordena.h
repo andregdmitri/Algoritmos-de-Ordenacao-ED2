@@ -1,7 +1,7 @@
-/* 
- * 2.2 - Contagem de Intersecoes
+/*
+ * 2.1 - Impelmentacao OrdenaNumeros
  *
- * File:   main.c
+ * File:   ordena.h
  * André Guarnier De Mitri - 11395579
  * Rui Emanuel Lima Vieira - 11810182
  * Luiz Gustavo Cardoso e Silva - 12559527
@@ -10,7 +10,6 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "ordena.h"
 
-int main(int argc, char** argv) {
-}
+void OrdenaDigitos(int (*A)[2], int n, int posicao);
+void OrdenaNumeros(int (*A)[2], int n);
