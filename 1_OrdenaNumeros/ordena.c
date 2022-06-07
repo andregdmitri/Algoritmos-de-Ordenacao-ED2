@@ -22,9 +22,8 @@ void OrdenaDigitos(int (*A)[2], int n, int posicao) {
       B[digito] = B[digito] + 1;
     }
 
-    for (i = 1; i <= 9; i++) {
+    for (i = 1; i <= 9; i++)
       B[i] = B[i] + B[i-1];
-    }
   
     int C[n][2];
     for (i = n-1; i >= 0; i--) {

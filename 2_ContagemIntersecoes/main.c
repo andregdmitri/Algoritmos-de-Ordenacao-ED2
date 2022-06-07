@@ -10,7 +10,13 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "ordena.h"
+#include "contagem.h"
 
 int main(int argc, char** argv) {
+  FILE* arquivo_A;
+  FILE* arquivo_B;
+  int nA = 3, nB = 2;
+
+  ContagemIntersecoes (arquivo_A, arquivo_B, nA, nB);
+  return 0;
 }
