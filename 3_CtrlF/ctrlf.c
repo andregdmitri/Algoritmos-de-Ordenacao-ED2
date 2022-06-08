@@ -19,18 +19,24 @@ void ctrlf (FILE* arquivo_texto, FILE* arquivo_trechos) {
   arquivo_texto = fopen("arquivo_texto.txt", "r");
   for (i = 0; (letra = fgetc(arquivo_texto)) != EOF; i++)
     texto[i] = letra;
-  fclose(arquivo_texto);  
+  fclose(arquivo_texto);
 	FILE* arquivo_saida = fopen("saida.txt","w");
   char* trecho = (char *) malloc(sizeof(char) * 1024);
-  while (fgets(trecho, 1024, arquivo_trechos) != NULL) {
-		for (i = 0; texto[i] != "[\n]"; i++){
-			for (j = 0; trecho[j] != "\n" && texto[i + j] == trecho[j]; j++);
-      if (trecho[j] == "\n") {
+  
+  while () {
+    for (i = 0; letra = fgetc(arquivo_trecho) != "\n"; i++) {
+      trecho[i] = letra;
+    }
+		for (i = 0; texto[i] != '\n'; i++){
+      printf("Textoi%c", texto[i])
+			for (j = 0; (trecho[j] != '\n') && (texto[i + j] == trecho[j]); j++);
+      if (trecho[j] == '\n') {
 				fprintf(arquivo_saida, "%d, %d\n", i, i+j-1);
 				break;
 			}
 		}
-	}
+	} while (fgets(trecho, 1024, arquivo_trechos) != NULL);
+
   fclose (arquivo_trechos);
   fclose (arquivo_saida);
   return;

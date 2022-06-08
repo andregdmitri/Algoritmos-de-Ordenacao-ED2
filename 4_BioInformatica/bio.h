@@ -7,7 +7,9 @@
  * Luiz Gustavo Cardoso e Silva - 12559527
  * 
  */
-#include <stdlib.h>
-#include <stdio.h>
 
-void ctrlf (FILE* arquivo_texto, FILE* arquivo_trechos);
+ContagemLeituras {
+    *FILE arquivo_genoma,
+    *FILE arquivo_pos_genes,
+  
+}
