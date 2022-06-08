@@ -10,12 +10,11 @@
 
 #include "ordena.h"
 
-void OrdenaDigitos(int (*A)[2], int n, int posicao) {
-    int B[10];
+void OrdenaDigitos(int (**A), int n, int posicao) {
+    int *B = malloc(10 * sizeof(int));
     int digito, i;
     for (i = 0; i < 10; i++)
         B[i] = 0;
-  
     for (i = 0; i <= n-1; i++) {
       digito = A[i][0]/posicao;
       digito = digito%10;
@@ -40,7 +39,7 @@ void OrdenaDigitos(int (*A)[2], int n, int posicao) {
   return;
 }
 
-void OrdenaNumeros(int (*A)[2], int n) {
+void OrdenaNumeros(int (**A), int n) {
   int maior = A[0][0];
   int posicao = 1;
   

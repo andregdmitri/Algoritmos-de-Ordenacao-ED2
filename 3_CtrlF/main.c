@@ -13,5 +13,11 @@
 #include "ctrlf.h"
 
 int main(int argc, char** argv) {
-  
+  FILE* arquivo_texto;
+	FILE* arquivo_trechos;
+
+	ctrlf(arquivo_texto, arquivo_trechos);
+
+	return 0;
+	
 }

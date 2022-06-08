@@ -8,19 +8,20 @@
  * 
  */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "contagem.h"
 
 void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB) {
-  int A[nA][2], B[nB][2];
-  int contagens[nA];
   int i, primeiro_iB = 0;
   int inicio, fim,  iA, iB;
-
-  for (i = 0; i < nA; i++)
-    contagens[nA] = 0;
   
+  int **A = (int **) malloc (nA * (sizeof(int *)));
+  for (i = 0; i < nA; i++)
+    A[i] = (int *) malloc (2 * (sizeof(int*)));
+    int **B =  malloc (nB * (sizeof(int *)));
+  
+  for (i = 0; i < nB; i++)
+    B[i] = (int *) malloc (2 * (sizeof(int*)));
+  int* contagens = (int *) calloc(nA, sizeof(int));
   arquivo_A = fopen("A.txt", "r");//Inicio leitura A.txt
   if (arquivo_A == NULL)
     printf("Falha em abrir o arquivo\n");
@@ -42,27 +43,38 @@ void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB) {
     B[i][1] = fim;
   }
   fclose(arquivo_B);//Fim leitura B.txt
-
+  
   OrdenaNumeros(A, nA);
   OrdenaNumeros(B, nB);
-
+	
   for (iA = 0; iA <= nA-1; iA++) {
     for(iB = primeiro_iB; iB <= nB-1; iB++) {
       if (A[iA][1] < B[iB][0] || A[iA][0] > B[iB][1]) {
-        if(contagens[iA] == 0)
+        if(contagens[iA] == 0) {
           primeiro_iB = iB;
-        else 
+        }
+        else {
           contagens[iA] = contagens[iA]+1;
+        }
       }
     }
   }
-  
-  FILE* cont=fopen("contagens.txt","w");
+
+	
+  FILE* cont = fopen("contagens.txt","w");
   for (i = 0; i < nA; i++) {
-    //fprintf(cont, "%d", contagens[i] );
-    //putw(contagens[i], cont);
-    printf("%d\n", contagens[i]);
+    fprintf(cont, "%d\n", contagens[i]);
   }
   fclose(cont);
+
+  //Liberando memória
+  /*
+  for(int i = 0; i < nA; i++)
+    free(A[i]);
+  free(A);
+  for(int i = 0; i < nB; i++)
+    free(B[i]);
+  free(B);
+  */
 	return;
 }

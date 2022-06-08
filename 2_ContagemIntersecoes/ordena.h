@@ -8,8 +8,7 @@
  * 
  */
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-void OrdenaDigitos(int (*A)[2], int n, int posicao);
-void OrdenaNumeros(int (*A)[2], int n);
+void OrdenaNumeros(int (**A), int n);

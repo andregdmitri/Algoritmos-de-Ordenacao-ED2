@@ -10,4 +10,3 @@ clean:
 	rm *.o cont contagens.txt
 run:
 	./cont
-

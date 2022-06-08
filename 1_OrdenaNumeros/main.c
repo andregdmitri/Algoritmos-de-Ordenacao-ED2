@@ -8,8 +8,6 @@
  * 
  */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "ordena.h"
 
 int main(int argc, char** argv) {
@@ -18,7 +16,9 @@ int main(int argc, char** argv) {
   //****************************************************************************************
   //Leitura da entrada
   scanf(" %d", &n);
-  int A[n][2];
+  int **A = (int **)malloc(n * sizeof(int*));
+  for(int i = 0; i < n; i++) 
+    A[i] = (int *)malloc(n * sizeof(int));
   for (i = 0; i < n; i++) {
     scanf (" %d %d", &A[i][0], &A[i][1]);
   }
