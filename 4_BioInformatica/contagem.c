@@ -10,7 +10,7 @@
 
 #include "contagem.h"
 
-void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB) {
+void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB, FILE *arquivo_saida) {
   int i, primeiro_iB = 0;
   int inicio, fim,  iA, iB;
   
@@ -22,7 +22,6 @@ void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB) {
   for (i = 0; i < nB; i++)
     B[i] = (int *) malloc (2 * (sizeof(int*)));
   int* contagens = (int *) calloc(nA, sizeof(int));
-  arquivo_A = fopen("A.txt", "r");//Inicio leitura A.txt
   if (arquivo_A == NULL)
     printf("Falha em abrir o arquivo\n");
   for(i = 0; i <= nA-1; i++) {
@@ -31,9 +30,7 @@ void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB) {
     A[i][0] = inicio;
     A[i][1] = fim;
   }
-  fclose(arquivo_A);//Fim leitura A.txt
 
-  arquivo_B = fopen("B.txt", "r");//Inicio leitura B.txt
   if (arquivo_B == NULL)
     printf("Falha em abrir o arquivo\n");
   for(i = 0; i <= nB-1; i++) {
@@ -42,7 +39,6 @@ void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB) {
     B[i][0] = inicio;
     B[i][1] = fim;
   }
-  fclose(arquivo_B);//Fim leitura B.txt
   
   OrdenaNumeros(A, nA);
   OrdenaNumeros(B, nB);
@@ -60,21 +56,17 @@ void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB) {
     }
   }
 
-	
-  FILE* cont = fopen("contagens.txt","w");
   for (i = 0; i < nA; i++) {
-    fprintf(cont, "%d\n", contagens[i]);
+    fprintf(arquivo_saida, "%d\n", contagens[i]);
   }
-  fclose(cont);
 
   //Liberando memória
+  /*
   for(int i = 0; i < nA; i++)
     free(A[i]);
   free(A);
   for(int i = 0; i < nB; i++)
     free(B[i]);
-  free(B);
-  free(arquivo_A);
-  free(arquivo_B);
+  free(B);*/
 	return;
 }

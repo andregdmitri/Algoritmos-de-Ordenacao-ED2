@@ -12,16 +12,12 @@
 #include <string.h>
 #include "ctrlf.h"
 
-void CtrlF (FILE* arquivo_texto, FILE* arquivo_trechos, FILE* arquivo saida) {
+void CtrlF (FILE* arquivo_texto, FILE* arquivo_trechos, FILE* arquivo_saida) {
   char letra;
   int i, j;
   char* texto = (char *) malloc(sizeof(char) * 1024);
-  arquivo_texto = fopen("arquivo_texto.txt", "r");
   for (i = 0; (letra = fgetc(arquivo_texto)) != EOF; i++)
     texto[i] = letra;
-  fclose(arquivo_texto);
-  arquivo_trechos = fopen("arquivo_trechos.txt","r");
-	FILE* arquivo_saida = fopen("saida.txt","w");
   char* trecho = (char *) malloc(sizeof(char) * 1024);
   
   while (fgets(trecho, 1024, arquivo_trechos) != NULL) {
@@ -33,13 +29,5 @@ void CtrlF (FILE* arquivo_texto, FILE* arquivo_trechos, FILE* arquivo saida) {
 			}
 		}
 	};
-  fclose (arquivo_saida);
   return;
 }
-/*
-Feedback:
-- Dando fopen na main ao inves de aqui (depois vamos usar só o ctrlf.c e não ia funcionar)
-- Lendo string e atribuindo usando &texto e era só texto
-- Dando fopen na main e tambem nessa função (Seg. Fault)
-- Fim da string == '%\n' e não EOF
-*/
