@@ -12,7 +12,7 @@
 #include <string.h>
 #include "ctrlf.h"
 
-void ctrlf (FILE* arquivo_texto, FILE* arquivo_trechos) {
+void CtrlF (FILE* arquivo_texto, FILE* arquivo_trechos, FILE* arquivo saida) {
   char letra;
   int i, j;
   char* texto = (char *) malloc(sizeof(char) * 1024);
@@ -32,8 +32,7 @@ void ctrlf (FILE* arquivo_texto, FILE* arquivo_trechos) {
 				break;
 			}
 		}
-	}; 
-  fclose (arquivo_trechos);
+	};
   fclose (arquivo_saida);
   return;
 }

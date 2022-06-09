@@ -10,7 +10,10 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "ordena.h"
+#include "bio.h"
 
 int main(int argc, char** argv) {
+  
+  void ContagemLeituras (FILE* arquivo_genoma, *FILE arquivo_pos_genes, *FILE arquivo_pos_fragmentos, int n_genes, int n_fragmentos);
+  return 0;
 }

@@ -10,4 +10,4 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void ctrlf (FILE* arquivo_texto, FILE* arquivo_trechos);
+void CtrlF (FILE* arquivo_texto, FILE* arquivo_trechos);
