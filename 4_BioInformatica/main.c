@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
   FILE *arquivo_pos_genes;
   FILE *arquivo_pos_fragmentos;
   FILE *arquivo_saida;
-  int n_genes = 100, n_fragmentos = 300;
+  int n_genes = 101, n_fragmentos = 300;
   
   arquivo_genoma = fopen("genoma.txt", "r");
   arquivo_fragmentos = fopen("fragmentos.txt", "r");

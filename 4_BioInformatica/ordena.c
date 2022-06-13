@@ -38,9 +38,6 @@ void OrdenaDigitos(int (**A), int n, int posicao) {
     A[i][0] = C[i][0];
     A[i][1] = C[i][1];
   }
-  for(int i = 0; i < n; i++)
-    free(A[i]);
-  free(A);
   free(B);
   for(int i = 0; i < n; i++)
     free(C[i]);

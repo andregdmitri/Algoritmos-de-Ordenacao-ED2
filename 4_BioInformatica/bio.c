@@ -8,8 +8,7 @@
  * 
  */
 
-#include "contagem.h"
-#include "ctrlf.h"
+#include "bio.h"
 
 void ContagemLeituras (FILE* arquivo_genoma, FILE* arquivo_pos_genes, FILE* arquivo_fragmentos, FILE* arquivo_pos_fragmentos, int n_genes, int n_fragmentos, FILE* arquivo_saida) {
   CtrlF(arquivo_genoma, arquivo_fragmentos, arquivo_pos_fragmentos);

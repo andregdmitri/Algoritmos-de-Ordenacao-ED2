@@ -37,10 +37,3 @@ void ctrlf (FILE* arquivo_texto, FILE* arquivo_trechos) {
   fclose (arquivo_saida);
   return;
 }
-/*
-Feedback:
-- Dando fopen na main ao inves de aqui (depois vamos usar só o ctrlf.c e não ia funcionar)
-- Lendo string e atribuindo usando &texto e era só texto
-- Dando fopen na main e tambem nessa função (Seg. Fault)
-- Fim da string == '%\n' e não EOF
-*/
