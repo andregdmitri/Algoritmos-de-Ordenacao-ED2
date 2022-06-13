@@ -1,5 +1,5 @@
 all: ordena.o  contagem.o ctrlf.o bio.o main.o
-	gcc -g ordena.o contagem.o ctrlf.o bio.o main.o -o bio -std=c99 -Wall -pedantic-errors -lm
+	gcc -g ordena.o contagem.o ctrlf.o bio.o main.o -o bio -std=c99 -Wall -Wextra -pedantic-errors -lm
 ordena.o:
 	gcc -g -c ordena.c -o ordena.o
 contagem.o:

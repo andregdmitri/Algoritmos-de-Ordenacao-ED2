@@ -21,9 +21,7 @@ void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB, FILE
   
   for (i = 0; i < nB; i++)
     B[i] = (int *) malloc (2 * (sizeof(int*)));
-  int* contagens = (int *) calloc(nA, sizeof(int));
-  if (arquivo_A == NULL)
-    printf("Falha em abrir o arquivo\n");
+  int* contagens = (int *) calloc(nA, sizeof(int *));
   for(i = 0; i <= nA-1; i++) {
     fscanf (arquivo_A, "%d", &inicio);
     fscanf (arquivo_A, "%d", &fim);
@@ -31,8 +29,6 @@ void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB, FILE
     A[i][1] = fim;
   }
 
-  if (arquivo_B == NULL)
-    printf("Falha em abrir o arquivo\n");
   for(i = 0; i <= nB-1; i++) {
     fscanf (arquivo_B, "%d", &inicio);
     fscanf (arquivo_B, "%d", &fim);
@@ -56,17 +52,16 @@ void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB, FILE
     }
   }
 
-  for (i = 0; i < nA; i++) {
+  for (i = 0; i < nA; i++)
     fprintf(arquivo_saida, "%d\n", contagens[i]);
-  }
 
   //Liberando memória
-  /*
+  
   for(int i = 0; i < nA; i++)
     free(A[i]);
   free(A);
   for(int i = 0; i < nB; i++)
     free(B[i]);
-  free(B);*/
+  free(B);
 	return;
 }

@@ -13,7 +13,11 @@
 #include "bio.h"
 
 int main(int argc, char** argv) {
-  FILE* arquivo_genoma, *arquivo_fragmentos, *arquivo_pos_genes, *arquivo_pos_fragmentos, *arquivo_saida;
+  FILE* arquivo_genoma;
+  FILE* arquivo_fragmentos;
+  FILE *arquivo_pos_genes;
+  FILE *arquivo_pos_fragmentos;
+  FILE *arquivo_saida;
   int n_genes = 100, n_fragmentos = 300;
   
   arquivo_genoma = fopen("genoma.txt", "r");
@@ -24,7 +28,7 @@ int main(int argc, char** argv) {
   
   ContagemLeituras (arquivo_genoma, arquivo_fragmentos, arquivo_pos_genes, arquivo_pos_fragmentos, n_genes, n_fragmentos, arquivo_saida);
 
-  fclose(arquivo_genoma);
+	fclose(arquivo_genoma);
   fclose(arquivo_fragmentos);
   fclose(arquivo_pos_genes);
   fclose(arquivo_pos_fragmentos);
