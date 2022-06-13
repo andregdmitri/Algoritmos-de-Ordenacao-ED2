@@ -10,18 +10,18 @@
 
 #include "contagem.h"
 
-void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB, FILE *arquivo_saida) {
+void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB, FILE* arquivo_saida) {
   int i, primeiro_iB = 0;
   int inicio, fim,  iA, iB;
   
   int **A = (int **) malloc (nA * (sizeof(int *)));
   for (i = 0; i < nA; i++)
     A[i] = (int *) malloc (2 * (sizeof(int*)));
-  
   int **B =  malloc (nB * (sizeof(int *)));
   for (i = 0; i < nB; i++)
     B[i] = (int *) malloc (2 * (sizeof(int*)));
-  int* contagens = (int *) calloc(nA, sizeof(int *));
+  
+  int* contagens = (int *) calloc(nA, sizeof(int));
   for(i = 0; i <= nA-1; i++) {
     fscanf (arquivo_A, "%d", &inicio);
     fscanf (arquivo_A, "%d", &fim);
@@ -51,16 +51,24 @@ void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB, FILE
       }
     }
   }
-
-  for (i = 0; i < nA; i++)
+	
+  for (i = 0; i < nA; i++) {
     fprintf(arquivo_saida, "%d\n", contagens[i]);
+  }
 
   //Liberando memória
-  for(int i = 0; i < nA; i++)
-    free(A[i]);
+  for (int i = 0; i < nA; i++) {
+    int* ptrAtual = A[i];
+    free(ptrAtual);
+  }
   free(A);
-  for(int i = 0; i < nB; i++)
-    free(B[i]);
+
+  for (int i = 0; i < nB; i++) {
+    int* ptrAtual = B[i];
+    free(ptrAtual);
+  }
   free(B);
+  
+  free(contagens);
 	return;
 }

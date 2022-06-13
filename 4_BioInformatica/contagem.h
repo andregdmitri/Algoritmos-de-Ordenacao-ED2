@@ -8,6 +8,8 @@
  * 
  */
 
+#include <stdlib.h>
+#include <stdio.h>
 #include "ordena.h"
 
 void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB, FILE* arquivo_saida);

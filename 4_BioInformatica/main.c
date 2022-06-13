@@ -13,25 +13,20 @@
 #include "bio.h"
 
 int main(int argc, char** argv) {
-  FILE* arquivo_genoma;
-  FILE* arquivo_fragmentos;
-  FILE *arquivo_pos_genes;
-  FILE *arquivo_pos_fragmentos;
-  FILE *arquivo_saida;
-  int n_genes = 101, n_fragmentos = 300;
+  FILE *arquivo_genoma, *arquivo_pos_genes, *arquivo_fragmentos, *arquivo_pos_fragmentos, *arquivo_saida;
+  int n_genes = 100, n_fragmentos = 300;
   
   arquivo_genoma = fopen("genoma.txt", "r");
-  arquivo_fragmentos = fopen("fragmentos.txt", "r");
   arquivo_pos_genes = fopen("pos_genes.csv", "r");
-  arquivo_pos_fragmentos = fopen("saida1.txt", "w");
+  arquivo_fragmentos = fopen("fragmentos.txt", "r");
+  arquivo_pos_fragmentos = fopen("saida.txt", "w");
   arquivo_saida = fopen("arquivo_saida.txt", "w");
   
-  ContagemLeituras (arquivo_genoma, arquivo_fragmentos, arquivo_pos_genes, arquivo_pos_fragmentos, n_genes, n_fragmentos, arquivo_saida);
+  ContagemLeituras (arquivo_genoma, arquivo_pos_genes, arquivo_fragmentos, arquivo_pos_fragmentos, n_genes, n_fragmentos, arquivo_saida);
 
 	fclose(arquivo_genoma);
   fclose(arquivo_fragmentos);
   fclose(arquivo_pos_genes);
-  fclose(arquivo_pos_fragmentos);
   fclose(arquivo_saida);
   return 0;
 }

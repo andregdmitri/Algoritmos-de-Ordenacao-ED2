@@ -9,5 +9,6 @@
  */
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 void CtrlF (FILE* arquivo_texto, FILE* arquivo_trechos, FILE* arquivo_saida);

@@ -12,18 +12,13 @@
 #include <string.h>
 #include "ctrlf.h"
 
-void ctrlf (FILE* arquivo_texto, FILE* arquivo_trechos) {
+void CtrlF (FILE* arquivo_texto, FILE* arquivo_trechos, FILE* arquivo_saida) {
   char letra;
   int i, j;
-  char* texto = (char *) malloc(sizeof(char) * 1024);
-  arquivo_texto = fopen("arquivo_texto.txt", "r");
+  char* texto = (char *) malloc(1024 * sizeof(char));
   for (i = 0; (letra = fgetc(arquivo_texto)) != EOF; i++)
     texto[i] = letra;
-  fclose(arquivo_texto);
-  arquivo_trechos = fopen("arquivo_trechos.txt","r");
-	FILE* arquivo_saida = fopen("saida.txt","w");
   char* trecho = (char *) malloc(sizeof(char) * 1024);
-  
   while (fgets(trecho, 1024, arquivo_trechos) != NULL) {
 		for (i = 0; texto[i] != '\n'; i++) {
 			for (j = 0; (trecho[j] != '\n') && (texto[i + j] == trecho[j]); j++);
@@ -32,8 +27,8 @@ void ctrlf (FILE* arquivo_texto, FILE* arquivo_trechos) {
 				break;
 			}
 		}
-	}; 
-  fclose (arquivo_trechos);
-  fclose (arquivo_saida);
+	}
+  free(texto);
+  free(trecho);
   return;
 }
