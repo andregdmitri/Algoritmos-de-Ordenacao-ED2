@@ -38,9 +38,9 @@ void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, long nA, long nB, FI
         if(contagens[iA] == 0) {
           primeiro_iB = iB;
         }
-        else {
-          contagens[iA] = contagens[iA]+1;
-        }
+      }
+      else {
+        contagens[iA] = contagens[iA]+1;
       }
     }
   }
