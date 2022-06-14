@@ -13,14 +13,13 @@
 #include "ctrlf.h"
 
 int main(int argc, char** argv) {
-	FILE* arquivo_texto, *arquivo_trechos, *arquivo_saida;
-	arquivo_texto = fopen("arquivo_texto.txt", "r");
-	arquivo_trechos = fopen("arquivo_trechos.txt", "r");
-	arquivo_saida = fopen("saida.txt", "w");
-	CtrlF(arquivo_texto, arquivo_trechos, arquivo_saida);
-	fclose(arquivo_texto);
-	fclose(arquivo_trechos);
-	fclose(arquivo_saida);
-	return 0;
-	
+	  FILE* arquivo_texto, *arquivo_trechos, *arquivo_saida;
+	  arquivo_texto = fopen("arquivo_texto.txt", "r");
+	  arquivo_trechos = fopen("arquivo_trechos.txt", "r");
+	  arquivo_saida = fopen("saida.txt", "w");
+	  CtrlF(arquivo_texto, arquivo_trechos, arquivo_saida);
+	  fclose(arquivo_texto);
+	  fclose(arquivo_trechos);
+	  fclose(arquivo_saida);
+	  return 0;
 }

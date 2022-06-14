@@ -9,18 +9,18 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include "contagem.h"
+#include "intersecoes.h"
 
 int main(int argc, char** argv) {
-  FILE* arquivo_A, *arquivo_B, *arquivo_saida;
-  int nA = 3, nB = 2;
+    FILE* arquivo_A, *arquivo_B, *arquivo_saida;
+    long nA = 4, nB = 3; //Numero de linhas em A e B
 
-  arquivo_A = fopen("A.txt", "r");
-  arquivo_B = fopen("B.txt", "r");
-  arquivo_saida = fopen("contagens.txt", "w");
-  ContagemIntersecoes (arquivo_A, arquivo_B, nA, nB, arquivo_saida);
-  fclose(arquivo_A);
-  fclose(arquivo_B);
-  fclose(arquivo_saida);
+    arquivo_A = fopen("A.txt", "r");
+    arquivo_B = fopen("B.txt", "r");
+    arquivo_saida = fopen("arquivo_saida.txt", "w");
+    ContagemIntersecoes (arquivo_A, arquivo_B, nA, nB, arquivo_saida);
+    fclose(arquivo_A);
+    fclose(arquivo_B);
+    fclose(arquivo_saida);
   return 0;
 }

@@ -11,33 +11,37 @@
 #include "ordena.h"
 
 int main(int argc, char** argv) {
-  int n, i = 0;
+  long n, i = 0;
   
   //Inicio leitura A.txt
   FILE* arquivo_A = fopen("A.txt", "r");
-  fscanf (arquivo_A, "%d", &n); //Tamanho da matrix
+  fscanf (arquivo_A, "%ld", &n); //Tamanho da matrix
 
   //Alocando matrix A
-  int **A = (int **)malloc(n * sizeof(int*));
-  for(int i = 0; i < n; i++) 
-    A[i] = (int *) malloc (2 * (sizeof(int*)));
+  long **A = (long **)malloc(n * sizeof(long*));
+  for(long i = 0; i < n; i++) 
+    A[i] = (long *) malloc (2 * (sizeof(long*)));
 
   //Leitura dos dados da Matrix A
   for(i = 0; i < n; i++) {
-    fscanf (arquivo_A, "%d", &A[i][0]);
-    fscanf (arquivo_A, "%d", &A[i][1]);
+    fscanf (arquivo_A, "%ld", &A[i][0]);
+    fscanf (arquivo_A, "%ld", &A[i][1]);
   }
   fclose(arquivo_A);
 
   OrdenaNumeros(A, n);
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < 2; j++) {
-      printf("%d ", A[i][j]);
+
+  //Print do resultado final
+  FILE* arquivo_saida = fopen("arquivo_saida.txt", "w");
+  for (long i = 0; i < n; i++) {
+    for (long j = 0; j < 2; j++) {
+      fprintf(arquivo_saida, "%ld ", A[i][j]);
     }
-    printf("\n");
+    fputs("\n", arquivo_saida);
   }
-  for (int i = 0; i < n; i++) {
-    int* ptrAtual = A[i];
+  fclose(arquivo_saida);
+  for (i = 0; i < n; i++) {
+    long* ptrAtual = A[i];
     free(ptrAtual);
   }
   free(A);
