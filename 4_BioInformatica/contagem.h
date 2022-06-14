@@ -12,4 +12,4 @@
 #include <stdio.h>
 #include "ordena.h"
 
-void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, int nA, int nB, FILE* arquivo_saida);
+void ContagemIntersecoes (FILE* arquivo_A, FILE* arquivo_B, long nA, long nB, FILE* arquivo_saida);

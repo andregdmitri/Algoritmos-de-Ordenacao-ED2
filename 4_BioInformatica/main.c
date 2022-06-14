@@ -14,10 +14,10 @@
 
 int main(int argc, char** argv) {
   FILE *arquivo_genoma, *arquivo_pos_genes, *arquivo_fragmentos, *arquivo_pos_fragmentos, *arquivo_saida;
-  int n_genes = 100, n_fragmentos = 300;
+  long n_genes = 10000, n_fragmentos = 300;
   
   arquivo_genoma = fopen("genoma_grande.txt", "r");
-  arquivo_pos_genes = fopen("pos_genes_medio.csv", "r");
+  arquivo_pos_genes = fopen("pos_genes_grande.csv", "r");
   arquivo_fragmentos = fopen("fragmentos_pequeno.txt", "r");
   arquivo_pos_fragmentos = fopen("saida.txt", "w");
   arquivo_saida = fopen("arquivo_saida.txt", "w");

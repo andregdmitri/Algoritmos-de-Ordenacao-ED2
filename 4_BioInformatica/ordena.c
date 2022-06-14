@@ -10,9 +10,9 @@
 
 #include "ordena.h"
 
-void OrdenaDigitos(int (**A), int n, int posicao) {
-    int *B = calloc(10, sizeof(int));
-    int digito, i;
+void OrdenaDigitos(long (**A), long n, long posicao) {
+    long *B = calloc(10, sizeof(long));
+    long i, digito;
     for (i = 0; i <= n-1; i++) {
       digito = A[i][0]/posicao;
       digito = digito%10;
@@ -22,16 +22,16 @@ void OrdenaDigitos(int (**A), int n, int posicao) {
     for (i = 1; i <= 9; i++)
       B[i] = B[i] + B[i-1];
   
-    int **C = (int **) malloc (n * (sizeof(int *)));
+    long **C = (long **) malloc (n * (sizeof(long *)));
     for (i = 0; i < n; i++)
-      C[i] = (int *) malloc (2 * (sizeof(int*)));
+      C[i] = (long *) malloc (2 * (sizeof(long*)));
 
     for (i = n-1; i >= 0; i--) {
       digito = A[i][0]/posicao;
       digito = digito%10;
       B[digito] = B[digito] - 1;
       C[B[digito]][0] = A[i][0];
-      C[B[digito]][1] = A[i][1];;
+      C[B[digito]][1] = A[i][1];
     }
     for (i = 0; i <= n-1; i++) {
       A[i][0] = C[i][0];
@@ -40,19 +40,18 @@ void OrdenaDigitos(int (**A), int n, int posicao) {
 
     //Liberando memoria
     free(B);
-    for (int i = 0; i < n; i++) {
-      int* ptrAtual = C[i];
+    for (i = 0; i < n; i++) {
+      long* ptrAtual = C[i];
       free(ptrAtual);
     }
     free(C);
   return;
 }
 
-void OrdenaNumeros(int (**A), int n) {
-  int maior = A[0][0];
-  int posicao = 1;
+void OrdenaNumeros(long (**A), long n) {
+  long maior = A[0][0], posicao = 1, i = 0;
   
-  for (int i = 0; i < n; i++)
+  for (i = 0; i < n; i++)
     if (maior < A[i][0])
       maior = A[i][0];
   

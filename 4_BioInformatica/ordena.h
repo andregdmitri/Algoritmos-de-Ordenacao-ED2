@@ -11,4 +11,4 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void OrdenaNumeros(int (**A), int n);
+void OrdenaNumeros(long (**A), long n);

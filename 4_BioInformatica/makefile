@@ -11,7 +11,7 @@ bio.o:
 main:
 	gcc -g -c main.c -o main.o
 clean:
-	rm *.o bio saida.txt
+	rm *.o bio saida.txt arquivo_saida.txt
 run:
 	./bio
 
