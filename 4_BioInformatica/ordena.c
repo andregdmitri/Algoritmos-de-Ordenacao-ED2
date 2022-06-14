@@ -15,7 +15,6 @@ void OrdenaDigitos(int (**A), int n, int posicao) {
     int digito, i;
     for (i = 0; i <= n-1; i++) {
       digito = A[i][0]/posicao;
-      digito = abs(digito);
       digito = digito%10;
       B[digito] = B[digito] + 1;
     }
@@ -29,7 +28,6 @@ void OrdenaDigitos(int (**A), int n, int posicao) {
 
     for (i = n-1; i >= 0; i--) {
       digito = A[i][0]/posicao;
-      digito = abs(digito);
       digito = digito%10;
       B[digito] = B[digito] - 1;
       C[B[digito]][0] = A[i][0];

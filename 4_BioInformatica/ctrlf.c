@@ -12,11 +12,11 @@
 void CtrlF (FILE* arquivo_texto, FILE* arquivo_trechos, FILE* arquivo_saida) {
   char letra;
   int i, j;
-  char* texto = (char *) calloc(10000, sizeof(char));
+  char* texto = (char *) calloc(1000000, sizeof(char));
   for (i = 0; (letra = fgetc(arquivo_texto)) != EOF; i++)
     texto[i] = letra;
-  char* trecho = (char *) calloc(10000, sizeof(char));
-  while (fgets(trecho, 10000, arquivo_trechos) != NULL) {
+  char* trecho = (char *) calloc(1000000, sizeof(char));
+  while (fgets(trecho, 1000000, arquivo_trechos) != NULL) {
 		for (i = 0; texto[i] != '\n'; i++) {
 			for (j = 0; (trecho[j] != '\n') && (texto[i + j] == trecho[j]); j++);
       if (trecho[j] == '\n') {

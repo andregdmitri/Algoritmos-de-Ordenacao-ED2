@@ -16,5 +16,7 @@ make -f makefile
 Limpar arquivos .o
 make clean
 
-Executar usando o arquivo t1 como entrada
-make run < t1.in
+Executar usando o arquivo A.txt como teste
+make run
+
+Resultado: Será observado devido ao printf
