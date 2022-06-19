@@ -22,11 +22,11 @@ void ContagemIntersecoes(FILE* arquivo_A, FILE* arquivo_B, long nA, long nB, FIL
 
     long* contagens = (long*)calloc(nA, sizeof(long));
     for (i = 0; i <= nA - 1; i++) {
-        fscanf(arquivo_A, "%ld,%ld", &A[i][0], &A[i][1]);
+        fscanf(arquivo_A, "%ld %ld", &A[i][0], &A[i][1]);
     }
 
     for (i = 0; i <= nB - 1; i++) {
-        fscanf(arquivo_B, "%ld,%ld", &B[i][0], &B[i][1]);
+        fscanf(arquivo_B, "%ld %ld", &B[i][0], &B[i][1]);
     }
 
     OrdenaNumeros(A, nA);

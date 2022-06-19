@@ -11,6 +11,6 @@ cont_leituras.o:
 main:
 	gcc -g -c main.c -o main.o
 clean:
-	rm *.o cont_leituras saida.txt arquivo_saida.txt
+	rm *.o saida.txt arquivo_saida.txt exec
 run:
 	./exec

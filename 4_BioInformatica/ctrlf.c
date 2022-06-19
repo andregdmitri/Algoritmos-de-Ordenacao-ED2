@@ -9,14 +9,14 @@
  */
 #include "ctrlf.h"
 
-void CtrlF(FILE* arquivo_texto, FILE* arquivo_trechos, FILE* arquivo_saida) {
+void CtrlF(FILE* arquivo_texto, FILE* arquivo_trechos, FILE* arquivo_saida, long tam_genoma) {
     char letra;
     long i, j;
-    char* texto = (char*)calloc(1000000, sizeof(char));
+    char* texto = (char*)calloc(tam_genoma, sizeof(char));
     for (i = 0; (letra = fgetc(arquivo_texto)) != EOF; i++)
         texto[i] = letra;
-    char* trecho = (char*)calloc(1000000, sizeof(char));
-    while (fgets(trecho, 1000000, arquivo_trechos) != NULL) {
+    char* trecho = (char*)calloc(tam_genoma, sizeof(char));
+    while (fgets(trecho, tam_genoma, arquivo_trechos) != NULL) {
         for (i = 0; texto[i] != '\n'; i++) {
             for (j = 0; (trecho[j] != '\n') && (texto[i + j] == trecho[j]); j++)
                 ;

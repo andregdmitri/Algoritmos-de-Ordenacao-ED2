@@ -11,14 +11,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "ctrlf.h"
+#include <time.h>
 
 int main(int argc, char** argv) {
 	  FILE* arquivo_texto, *arquivo_trechos, *arquivo_saida;
-	  arquivo_texto = fopen("arquivo_texto.txt", "r");
-	  arquivo_trechos = fopen("arquivo_trechos.txt", "r");
+	  arquivo_texto = fopen("arquivo_texto 2.txt", "r");
+	  arquivo_trechos = fopen("arquivo_trechos 2.txt", "r");
 	  arquivo_saida = fopen("saida.txt", "w");
+	  clock_t begin = clock();
 	  CtrlF(arquivo_texto, arquivo_trechos, arquivo_saida);
-	  fclose(arquivo_texto);
+    clock_t end = clock();
+    double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+		printf("%f", time_spent);
+		fclose(arquivo_texto);
 	  fclose(arquivo_trechos);
 	  fclose(arquivo_saida);
 	  return 0;

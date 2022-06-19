@@ -11,4 +11,4 @@
 #include <stdlib.h>
 #include <string.h>
 
-void CtrlF(FILE* arquivo_texto, FILE* arquivo_trechos, FILE* arquivo_saida);
+void CtrlF(FILE* arquivo_texto, FILE* arquivo_trechos, FILE* arquivo_saida, long tam_genoma);
