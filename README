@@ -1,0 +1,22 @@
+/*
+ * 2.1 - Impelmentacao OrdenaNumeros
+ *
+ * File:   README
+ * André Guarnier De Mitri - 11395579
+ * Rui Emanuel Lima Vieira - 11810182
+ * Luiz Gustavo Cardoso e Silva - 12559527
+ * 
+ */
+
+Uso do makefile
+
+Compilar:
+make -f makefile
+
+Limpar arquivos .o
+make clean
+
+Executar o programa
+make run
+
+Alguns arquivos possuem uma pasta chamada dados que servem para os testes de tempo.

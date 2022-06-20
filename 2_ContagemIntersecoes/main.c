@@ -13,7 +13,7 @@
 
 int main(int argc, char** argv) {
     FILE* arquivo_A, *arquivo_B, *arquivo_saida;
-    long nA = 4, nB = 3; //Numero de linhas em A e B
+    long nA = 3, nB = 7; //Numero de linhas em A e B
 
     arquivo_A = fopen("A.txt", "r");
     arquivo_B = fopen("B.txt", "r");

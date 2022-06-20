@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
 	  CtrlF(arquivo_texto, arquivo_trechos, arquivo_saida);
     clock_t end = clock();
     double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-		printf("%f", time_spent);
+		printf("%f\n", time_spent);
 	  fclose(arquivo_texto);
 	  fclose(arquivo_trechos);
 	  fclose(arquivo_saida);
